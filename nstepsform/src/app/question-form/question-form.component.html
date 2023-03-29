@@ -1,0 +1,61 @@
+<button class="back-button" (click)="goBack()">  previous question </button>
+
+<div class="question-card" *ngIf="question.type==1">
+    <label class="question-label" >  Question {{step}}: {{question.key}} </label>
+    <form [formGroup]="questionForm">
+
+        <input formControlName="answer" type="text" [name]="question.key">
+
+        <button (click)="submitAnswer()"> Submit answer </button>
+
+    </form>
+
+</div>
+
+
+<div class="question-card"  *ngIf="question.type==2">
+    <label class="question-label" >  Question {{step}}: {{question.key}} </label>
+    <form [formGroup]="questionForm">
+        <select formControlName="answer" [name]="question.key" id="cars">
+            <option *ngFor="let option of question.options">{{ option }}</option>
+        </select>
+
+        <button (click)="submitAnswer()"> Submit answer </button>
+
+    </form>
+
+</div>
+
+
+
+<div class="question-card"  *ngIf="question.type==3">
+    <label class="question-label" >  Question {{step}}: {{question.key}} </label>
+
+    <form [formGroup]="questionForm">
+        <div [formArray]="answer" style="padding-top: 10px;">
+            <div *ngFor="let choice of question.options; let i=index;">
+                <input type="checkbox" [formControlname]="choice" (change)="checkclick($event)" [value]="checked">
+               {{question.options[i]}}
+            </div>
+        </div>
+
+        <button (click)="submitMultiAnswer()"> Submit answer </button>
+
+    </form>
+
+</div>
+
+
+
+
+<div  class="question-card"  *ngIf="question.type==4">
+    <label class="question-label" >  Question {{step}}: {{question.key}} </label>
+
+    <form [formGroup]="questionForm">
+
+        <input class="number-input" formControlName="answer" type="number" [name]="question.key">
+
+        <button (click)="submitAnswer()"> Submit answer </button>
+
+    </form>
+</div>

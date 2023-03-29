@@ -1,0 +1,11 @@
+<div *ngFor="let question of questions;let i = index " class="card-container">
+  <question-form *ngIf="step==i" [step]="i+1" [question]="question" (newAnswerEvent)="submitAnswer($event)"
+    (goBackEvent)="stepBack()"> </question-form>
+</div>
+
+
+<div *ngIf="finalresult.length>0">
+
+  <div class="answer-container" *ngFor="let result of finalresult">
+ <i>  {{result.question}}:  </i>    <b>  {{result.answer}} </b>  
+</div>

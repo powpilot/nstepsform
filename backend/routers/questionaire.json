@@ -1,0 +1,35 @@
+[{
+    "key": "Age",
+    "type": 4
+  },
+  {
+    "key": "Provider",
+    "type": 2,
+    "options": [
+      "MetLife",  
+      "Alianz",
+      "Cigna"
+    ]
+  },
+    {
+      "key": "FirstName",
+      "type": 1
+    },
+    {
+      "key": "LastName",
+      "type": 1
+    },
+    {
+      "key": "Title",
+      "type": 1
+    },
+    {
+      "key": "Allergies",
+      "type": 3,   
+      "options": [
+        "Milk",
+        "Nuts",
+        "Strawberries"
+      ]
+    }
+  ]
